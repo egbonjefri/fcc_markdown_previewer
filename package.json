@@ -2,7 +2,7 @@
   "name": "main--fcc_markdown_previewer",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://fcc-markdown-previewer.netlify.app/"
+  "homepage": "https://fccmarkdown-previewer.netlify.app/"
   ,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
