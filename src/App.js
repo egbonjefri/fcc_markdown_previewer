@@ -112,7 +112,7 @@ function App() {
       <i onClick={maximize} className="material-icons toggle-icon right">zoom_out_map</i>
       <i onClick={minimize} className="material-icons out-icon right">unfold_less</i>
       </div>
-      <textarea className='input-text' value={iniText} onChange={handleChange}></textarea>
+      <textarea className='input-text' defaultValue={iniText} onChange={handleChange}></textarea>
       </div>
    
       <div className='previewer-header'>
