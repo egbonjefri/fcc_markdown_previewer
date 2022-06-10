@@ -7,14 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-    background-color: rgb(219, 219, 219);
-    display: block;
-    overflow: auto;
-    width: 100%
-}
+
 .editor {
   display: flex;
   flex-direction: column;
@@ -142,5 +135,18 @@ img {
 
 h2 {
   border-bottom: solid 2px black;
-  border-radius: 5%;
+}
+
+pre {
+  display: block;
+  overflow: auto;
+  background-color: rgb(53, 53, 53);
+  padding: 5px;
+  line-height: 1.2;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+    overflow: auto;
+    font-weight: bold;
 }

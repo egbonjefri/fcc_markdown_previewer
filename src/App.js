@@ -1,6 +1,20 @@
-import Markdown from 'marked-react'
+import { marked } from 'marked';
 import { useState } from 'react'
+import Prism from "prismjs";
 import './materialize.css'
+import './prism.css'
+
+
+marked.setOptions({
+  breaks: true,
+  highlight: function (code) {
+    return Prism.highlight(code, Prism.languages.javascript, 'javascript');
+  }
+});
+
+
+
+
 const iniText = `## Welcome to my React Markdown Previewer!
 
 
@@ -50,6 +64,12 @@ function App() {
   const [text, setText] = useState(iniText);
   function handleChange (e) {
     setText(e.target.value)
+  }
+
+  function getMarkdownText() {
+    var rawMarkup = marked.parse(text);
+ 
+    return { __html: rawMarkup }
   }
   function maximize () {
     const toggleBtn = document.getElementsByClassName('toggle-icon')[0];
@@ -119,12 +139,13 @@ function App() {
        <i onClick={outputMax} className="material-icons prev-icon right">zoom_out_map</i>
       <i onClick={outputMin} className="material-icons prev-out right">unfold_less</i>
        </div>
-
+  
     
       <div className='output'>
-        <div className='output-content'>
-        <Markdown>{text}</Markdown>
+        <div className='output-content' dangerouslySetInnerHTML={getMarkdownText()}>
+  
         </div>
+ 
       </div>
       
     </div>
